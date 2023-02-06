@@ -4,9 +4,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="Styles/styles.css">
     <title>CRUD Js</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    JavaScript CRUD
+                </a>
+            </div>
+          </nav>
+    </header>
+    <main class="main-content">
+        <div class="crud-container">
+            <div class="crud-header">
+                <h1>Estudiantes Registrados</h1>
+                <button class="button is-success" id="openRegisterModal">
+                    <i class="fas fa-plus"></i> 
+                    <span>Nuevo Estudiante</span>
+                </button>
+            </div>
+            <div class="table-content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Teleono</th>
+                            <th>Correo</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>Abram</td>
+                            <td>Castelan</td>
+                            <td>Cruz</td>
+                            <td>1134983</td>
+                            <td>abram@gmai.com</td>
+                            <td>
+                                <div class="btn-operaciones">
+                                    <button class="button is-warning">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
+                                    <button class="button is-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </main>
+    <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Registrar Nuevo Estudiante</p>
+            <button class="delete" aria-label="close" id="close-modal"></button>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+            <form id="register-form">
+                <div class="field">
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                      <input class="input" type="text" name="nombre" placeholder="Ingresa el nombre">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Apellido Paterno</label>
+                    <div class="control">
+                      <input class="input" type="text" name="apellido-paterno" placeholder="Ingresa el apellido paterno">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Apellido Materno</label>
+                    <div class="control">
+                      <input class="input" type="text" name="apellido-materno" placeholder="Ingresa el apellido materno">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Telefono</label>
+                    <div class="control has-icons-left">
+                      <input class="input" type="tel" name="telefono" placeholder="+52 9837921">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-phone"></i>
+                      </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Correo electronico</label>
+                    <div class="control has-icons-left">
+                      <input class="input" type="email" name="correo" placeholder="examle@gmail.com">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                      </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Descripcion</label>
+                    <div class="control">
+                      <textarea class="textarea" name="descripcion" placeholder="Textarea"></textarea>
+                    </div>
+                </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-success" type="submit">
+                <i class="fas fa-save"></i> 
+                Registrar
+            </button>
+          </footer>
+        </form>
+        </div>
+      </div>
+      <script src="JS/main.js"></script>
 </body>
 </html>
