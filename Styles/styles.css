@@ -42,7 +42,6 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 0 2rem 1rem 2rem;
-    border-bottom: 1px solid;
 }
 .crud-container h1{
     font-weight: bold;
@@ -56,4 +55,12 @@ body{
     margin: 0 10px;
     align-items: center;
     width: 7rem;
+}
+.table-content{
+    border: 1px solid;
+    display: flex;
+}
+.table{
+    width: 100%;
+    height: auto;
 }
