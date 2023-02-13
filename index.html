@@ -41,12 +41,12 @@
                             <th>Nombre</th>
                             <th>Apellido Paterno</th>
                             <th>Apellido Materno</th>
-                            <th>Teleono</th>
+                            <th>Telefono</th>
                             <th>Correo</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="CuerpoTabla">
                         <tr>
                             <th>1</th>
                             <td>Abram</td>
@@ -79,7 +79,7 @@
           </header>
           <section class="modal-card-body">
             <!-- Content ... -->
-            <form id="register-form">
+            <form id="register-form" method="POST">
                 <div class="field">
                     <label class="label">Nombre</label>
                     <div class="control">
@@ -132,6 +132,13 @@
         </form>
         </div>
       </div>
-      <script src="JS/main.js"></script>
+      <!-- 
+        Si detectas el error:
+        Uncaught SyntaxError: Cannot use import statement outside a module
+        Agrega type="module" a la etiqueta
+      -->
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+      <script type="module" src="JS/main.js"></script>
 </body>
 </html>
