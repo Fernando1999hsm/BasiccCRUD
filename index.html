@@ -47,24 +47,7 @@
                         </tr>
                     </thead>
                     <tbody id="CuerpoTabla">
-                        <tr>
-                            <th>1</th>
-                            <td>Abram</td>
-                            <td>Castelan</td>
-                            <td>Cruz</td>
-                            <td>1134983</td>
-                            <td>abram@gmai.com</td>
-                            <td>
-                                <div class="btn-operaciones">
-                                    <button class="button is-warning">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </button>
-                                    <button class="button is-danger">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                   </table>
             </div>
@@ -131,7 +114,76 @@
           </footer>
         </form>
         </div>
+    </div>
+    <!--  -->
+    <div class="modal" id="Update-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Modifica Estudiante</p>
+          <button class="delete" aria-label="close" id="closeUpdatemodal"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+          <form id="update-form" method="POST">
+            <div class="field" style="display: none;">
+              <label class="label">Id</label>
+              <div class="control">
+                <input class="input" type="text" name="Id" placeholder="">
+              </div>
+            </div>
+              <div class="field">
+                  <label class="label">Nombre</label>
+                  <div class="control">
+                    <input class="input" type="text" name="nombre" placeholder="Ingresa el nombre">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Apellido Paterno</label>
+                  <div class="control">
+                    <input class="input" type="text" name="apellido-paterno" placeholder="Ingresa el apellido paterno">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Apellido Materno</label>
+                  <div class="control">
+                    <input class="input" type="text" name="apellido-materno" placeholder="Ingresa el apellido materno">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Telefono</label>
+                  <div class="control has-icons-left">
+                    <input class="input" type="tel" name="telefono" placeholder="+52 9837921">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-phone"></i>
+                    </span>
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Correo electronico</label>
+                  <div class="control has-icons-left">
+                    <input class="input" type="email" name="correo" placeholder="examle@gmail.com">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Descripcion</label>
+                  <div class="control">
+                    <textarea class="textarea" name="descripcion" placeholder="Textarea"></textarea>
+                  </div>
+              </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" type="submit">
+              <i class="fas fa-save"></i> 
+              Modificar
+          </button>
+        </footer>
+      </form>
       </div>
+    </div>
       <!-- 
         Si detectas el error:
         Uncaught SyntaxError: Cannot use import statement outside a module
