@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-import { getDatabase , ref, set , onValue , update } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+import { getDatabase , ref, set , onValue , update , remove } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 /* INICIANDO Y CONFIGURANDO FIREBASE*/
 const firebaseConfig = {
     apiKey: "AIzaSyCJJlwaKb3DJNvu2rYPxyNus0cdTn-l30A",
@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', async(e)=>{
           '<button class="button is-warning" data-id='+element.Id+' id="openUpdateModal">'+
             '<i class="fas fa-pencil-alt"></i>'+
           '</button>'+
-          '<button class="button is-danger">'+
+          '<button class="button is-danger" data-id='+element.Id+' id="DeleteStudent">'+
             '<i class="fas fa-trash"></i>'+
           '</button>'+
         '</div>'+
@@ -65,6 +65,17 @@ window.addEventListener('DOMContentLoaded', async(e)=>{
             UpdateForm['descripcion'].value = datos.Desc
             ShowUpdateModal()
           })
+        })
+      })
+      const deleteButtons = document.querySelectorAll('.is-danger')
+      deleteButtons.forEach( (button)=>{
+        button.addEventListener('click', (e)=>{
+          console.log("Entro a eliminar")
+          console.log(button.getAttribute('data-id'))
+          const recuperarDatos = ref(AccesDB,'students/'+button.getAttribute('data-id'))
+          const deletes = {};
+          deletes['students/'+button.getAttribute('data-id')+'/'] = null;
+          update(ref(AccesDB), deletes);
         })
       })
     })
@@ -145,4 +156,3 @@ UpdateForm.addEventListener('submit', (e)=>{
   ShowUpdateModal()
   ShowUpdateModal()
 })
-
